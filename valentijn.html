@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>💖 Valentijn?</title>
+    <style>
+        body {
+            background-color: #ffe6f0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+        h1 {
+            color: #d6336c;
+            font-size: 3em;
+        }
+        button {
+            background-color: #ff4d88;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+        button:hover {
+            background-color: #e63971;
+        }
+        #response {
+            margin-top: 40px;
+            font-size: 1.5em;
+            color: #d6336c;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Wil je mijn Valentijn zijn? 💖</h1>
+    <button onclick="sayYes()">Ja! 😍</button>
+
+    <div id="response"></div>
+
+    <script>
+        function sayYes() {
+            document.getElementById("response").innerHTML =
+                "YESSS 🥰 Ik ben superblij! 💕";
+        }
+    </script>
+
+</body>
+</html>
