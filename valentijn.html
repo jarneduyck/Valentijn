@@ -1,4 +1,4 @@
-
+html_content = """
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -47,16 +47,20 @@ button {
 }
 
 #message {
-    margin-top: 40px;
+    margin-top: 30px;
     font-size: 1.6em;
     color: #d6336c;
+}
+
+#video {
+    margin-top: 30px;
+    display: none;
 }
 
 .heart {
     position: fixed;
     top: -10px;
-    color: #ff4d88;
-    font-size: 20px;
+    font-size: 22px;
     animation: fall 5s linear infinite;
 }
 
@@ -80,7 +84,15 @@ button {
 
 <div id="message"></div>
 
-<audio id="song" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+<div id="video">
+    <iframe width="360" height="215"
+        src=""
+        title="Florence + The Machine – Dog Days Are Over"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+    </iframe>
+</div>
 
 <script>
 let noScale = 1;
@@ -105,11 +117,14 @@ function sayYes() {
     document.getElementById("message").innerHTML =
         "🎉 Gefeliciteerd Luna! 🎉<br>" +
         "Je bent officieel mijn Valentijn 💕<br><br>" +
-     "<br>" +
-        "Zet het volume maar aan 😉 met jouw mooi haar poes";
+        "📅 " + new Date().toLocaleDateString() + "<br>" +
+        "Zet het volume maar aan 😉";
 
-    document.getElementById("song").play();
     startHearts();
+
+    const iframe = document.querySelector("#video iframe");
+    iframe.src = "https://www.youtube.com/embed/iWOyfLBYtuU?autoplay=1";
+    document.getElementById("video").style.display = "block";
 }
 
 function startHearts() {
@@ -128,5 +143,12 @@ function startHearts() {
 
 </body>
 </html>
+"""
+
+with open("valentijn.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print("🌙 Valentijn.html met Florence + The Machine is klaar 💖")
+
 
 
